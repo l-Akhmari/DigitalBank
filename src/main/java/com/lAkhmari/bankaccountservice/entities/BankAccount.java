@@ -1,10 +1,7 @@
 package com.lAkhmari.bankaccountservice.entities;
 
 import com.lAkhmari.bankaccountservice.enums.AccountType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +18,8 @@ public class BankAccount {
     @Id
     private String id;
     private Date createdAt;
-    private double balance;
+    private Double balance;
     private String currency;
+    @Enumerated(EnumType.STRING)
     private AccountType type;
 }
